@@ -163,9 +163,11 @@ cython_debug/
 
 # MapReader Outputs 
 
-patches_100_meters/*
+patches_*_*
 models/*
 tmp_checkpoints/*
 annotations/*
 /*patch_df.csv
 /*parent_df.csv
+deepsolo_text_predictions.geojson
+search_results.geojson
