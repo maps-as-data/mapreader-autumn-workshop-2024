@@ -161,6 +161,8 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+.DS_Store
+
 # MapReader Outputs 
 
 patches_*_*
@@ -171,3 +173,4 @@ annotations/*
 /*parent_df.csv
 deepsolo_text_predictions.geojson
 search_results.geojson
+predicted_outputs.geojson
