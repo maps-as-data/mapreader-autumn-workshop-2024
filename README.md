@@ -12,40 +12,13 @@ Follow the instructions below to set up the notebook in Docker, on Google Colab 
 
 <h2>Table of contents</h2>
 
-- [Set up - Docker](#set-up---docker)
-  - [Creating the Docker image](#creating-the-docker-image)
-  - [Running the Docker container](#running-the-docker-container)
 - [Set up - Google Colab (short version)](#set-up---google-colab-short-version)
 - [Detailed instructions for setting up on Google Colab](#detailed-instructions-for-setting-up-on-google-colab)
   - [Optional: Change the runtime type](#optional-change-the-runtime-type)
+- [Set up - Docker](#set-up---docker)
+  - [Creating the Docker image](#creating-the-docker-image)
+  - [Running the Docker container](#running-the-docker-container)
 - [Set up - Local](#set-up---local)
-
-## Set up - Docker
-
-### Creating the Docker image
-
-Clone the repository and navigate to the root directory of the repository.
-
-```bash
-git clone https://github.com/maps-as-data/mapreader-autumn-workshop-2024
-cd mapreader-autumn-workshop-2024
-```
-
-To create the Docker image, run the following command:
-
-```bash
-docker build -t mapreader-workshop .
-```
-
-### Running the Docker container
-
-To run the Docker container, run the following command:
-
-```bash
-docker run -p 8888:8888 --mount source=workshop_outputs,target=/app mapreader-workshop
-```
-
-Click the link that appears in the terminal to open the notebook in your browser.
 
 ## Set up - Google Colab (short version)
 
@@ -126,6 +99,33 @@ By default, Google Colab uses a CPU runtime. If you want to use a GPU runtime, y
 
     ![GPU runtime](images/4-resources-result.png)
 
+
+## Set up - Docker
+
+### Creating the Docker image
+
+Clone the repository and navigate to the root directory of the repository.
+
+```bash
+git clone https://github.com/maps-as-data/mapreader-autumn-workshop-2024
+cd mapreader-autumn-workshop-2024
+```
+
+To create the Docker image, run the following command:
+
+```bash
+docker build -t mapreader-workshop .
+```
+
+### Running the Docker container
+
+To run the Docker container, run the following command:
+
+```bash
+docker run -p 8888:8888 --mount source=workshop_outputs,target=/app mapreader-workshop
+```
+
+Click the link that appears in the terminal to open the notebook in your browser.
 
 ## Set up - Local
 
