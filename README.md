@@ -134,12 +134,22 @@ To run the notebook locally, follow the instructions [here](https://mapreader.re
 You can then install the required packages for this notebook by running:
 
 ```bash
+pip install torch==2.2.2 torchvision==0.17.2 -f https://download.pytorch.org/whl/torch_stable.html
+pip install 'git+https://github.com/facebookresearch/detectron2.git'
+pip install 'git+https://github.com/maps-as-data/DeepSolo.git'
 pip install -r requirements.txt
 ```
 
-You can then run the notebook by running:
+For running the text spotting, you will need to clone the DeepSolo repository and download the weights file for the text spotting model.
+To do this, run the following commands:
 
 ```bash
+git clone https://github.com/maps-as-data/DeepSolo.git
+wget https://huggingface.co/rwood-97/DeepSolo_ic15_res50/resolve/main/ic15_res50_finetune_synth-tt-mlt-13-15-textocr.pth
+```
 
-jupyter notebook mapreader-spatial-humanities-workshop.ipynb
+You can then run the notebooks by running:
+
+```bash
+jupyter notebook
 ```
