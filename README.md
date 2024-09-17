@@ -8,7 +8,7 @@ There are three notebooks in this repository:
 2. `mapreader-autumn-workshop-2024-part2.ipynb`: A worked example of MapReader's text spotting pipeline.
 3. `mapreader-autumn-workshop-2024-part3-explore_text_on_maps.ipynb`: Some examples of how to work with the MapReader classification and text spotting outputs.
 
-Follow the instructions below to set up the notebook in Docker or on Google Colab.
+Follow the instructions below to set up the notebook in Docker, on Google Colab or locally.
 
 <h2>Table of contents</h2>
 
@@ -18,6 +18,7 @@ Follow the instructions below to set up the notebook in Docker or on Google Cola
 - [Set up - Google Colab (short version)](#set-up---google-colab-short-version)
 - [Detailed instructions for setting up on Google Colab](#detailed-instructions-for-setting-up-on-google-colab)
   - [Optional: Change the runtime type](#optional-change-the-runtime-type)
+- [Set up - Local](#set-up---local)
 
 ## Set up - Docker
 
@@ -124,3 +125,21 @@ By default, Google Colab uses a CPU runtime. If you want to use a GPU runtime, y
 3. The runtime type should now be changed to GPU.
 
     ![GPU runtime](images/4-resources-result.png)
+
+
+## Set up - Local
+
+To run the notebook locally, follow the instructions [here](https://mapreader.readthedocs.io/en/latest/getting-started/installation-instructions/index.html) to set up your MapReader python environment.
+
+You can then install the required packages for this notebook by running:
+
+```bash
+pip install -r requirements.txt
+```
+
+You can then run the notebook by running:
+
+```bash
+
+jupyter notebook mapreader-spatial-humanities-workshop.ipynb
+```
