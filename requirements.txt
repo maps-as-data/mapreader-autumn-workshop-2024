@@ -1,0 +1,6 @@
+mapreader[dev]
+jupyter
+pyyaml
+sentence-transformers 
+scikit-learn 
+plotly
