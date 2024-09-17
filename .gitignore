@@ -164,7 +164,7 @@ cython_debug/
 .DS_Store
 
 # MapReader Outputs 
-
+workshop_outputs/*
 patches_*_*
 models/*
 tmp_checkpoints/*

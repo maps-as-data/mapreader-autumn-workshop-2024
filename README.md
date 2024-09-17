@@ -41,7 +41,8 @@ docker build -t mapreader-workshop .
 To run the Docker container, run the following command:
 
 ```bash
-docker run -p 8888:8888 --mount source=workshop_outputs,target=/app mapreader-workshop
+mkdir workshop_outputs
+docker run -p 8888:8888 --mount type=bind,source=$PWD/workshop_outputs,target=/app/workshop_outputs mapreader-workshop
 ```
 
 Click the link that appears in the terminal to open the notebook in your browser.
