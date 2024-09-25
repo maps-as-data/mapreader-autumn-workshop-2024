@@ -1,6 +1,6 @@
 # MapReader Autumn Workshop 2024
 
-[![Slides](https://img.shields.io/badge/slides-blue)](https://github.com/maps-as-data/spatial-humanities-mapreader-workshop/blob/main/slides.pdf)
+[![Slides](https://img.shields.io/badge/slides-blue)](https://github.com/maps-as-data/mapreader-autumn-workshop-2024/blob/main/slides.pdf)
 [![Documentation](https://img.shields.io/badge/documentation-green)](https://mapreader.readthedocs.io/en/latest)
 
 This repo contains worked examples of running [MapReader](https://github.com/maps-as-data/MapReader), designed for the Data/Culture Autumn Workshop 2024.
@@ -15,13 +15,67 @@ Follow the instructions below to set up the notebook in Docker, on Google Colab 
 
 <h2>Table of contents</h2>
 
-- [Set up - Google Colab (short version)](#set-up---google-colab-short-version)
-- [Detailed instructions for setting up on Google Colab](#detailed-instructions-for-setting-up-on-google-colab)
-  - [Optional: Change the runtime type](#optional-change-the-runtime-type)
 - [Set up - Docker](#set-up---docker)
   - [Creating the Docker image](#creating-the-docker-image)
   - [Running the Docker container](#running-the-docker-container)
 - [Set up - Local](#set-up---local)
+- [Set up - Google Colab (short version)](#set-up---google-colab-short-version)
+- [Detailed instructions for setting up on Google Colab](#detailed-instructions-for-setting-up-on-google-colab)
+  - [Optional: Change the runtime type](#optional-change-the-runtime-type)
+
+## Set up - Docker
+
+### Creating the Docker image
+
+Clone the repository and navigate to the root directory of the repository.
+
+```bash
+git clone https://github.com/maps-as-data/mapreader-autumn-workshop-2024
+cd mapreader-autumn-workshop-2024
+```
+
+To create the Docker image, run the following command:
+
+```bash
+docker build -t mapreader-workshop .
+```
+
+### Running the Docker container
+
+To run the Docker container, run the following command:
+
+```bash
+docker run -p 8888:8888 --mount source=workshop_outputs,target=/app mapreader-workshop
+```
+
+Click the link that appears in the terminal to open the notebook in your browser.
+
+## Set up - Local
+
+To run the notebook locally, follow the instructions [here](https://mapreader.readthedocs.io/en/latest/getting-started/installation-instructions/index.html) to set up your MapReader python environment.
+
+You can then install the required packages for this notebook by running:
+
+```bash
+pip install torch==2.2.2 torchvision==0.17.2 -f https://download.pytorch.org/whl/torch_stable.html
+pip install 'git+https://github.com/facebookresearch/detectron2.git'
+pip install 'git+https://github.com/maps-as-data/DeepSolo.git'
+pip install -r requirements.txt
+```
+
+For running the text spotting, you will need to clone the DeepSolo repository and download the weights file for the text spotting model.
+To do this, run the following commands:
+
+```bash
+git clone https://github.com/maps-as-data/DeepSolo.git
+wget https://huggingface.co/rwood-97/DeepSolo_ic15_res50/resolve/main/ic15_res50_finetune_synth-tt-mlt-13-15-textocr.pth
+```
+
+You can then run the notebooks by running:
+
+```bash
+jupyter notebook
+```
 
 ## Set up - Google Colab (short version)
 
@@ -101,58 +155,3 @@ By default, Google Colab uses a CPU runtime. If you want to use a GPU runtime, y
 3. The runtime type should now be changed to GPU.
 
     ![GPU runtime](images/4-resources-result.png)
-
-
-## Set up - Docker
-
-### Creating the Docker image
-
-Clone the repository and navigate to the root directory of the repository.
-
-```bash
-git clone https://github.com/maps-as-data/mapreader-autumn-workshop-2024
-cd mapreader-autumn-workshop-2024
-```
-
-To create the Docker image, run the following command:
-
-```bash
-docker build -t mapreader-workshop .
-```
-
-### Running the Docker container
-
-To run the Docker container, run the following command:
-
-```bash
-docker run -p 8888:8888 --mount source=workshop_outputs,target=/app mapreader-workshop
-```
-
-Click the link that appears in the terminal to open the notebook in your browser.
-
-## Set up - Local
-
-To run the notebook locally, follow the instructions [here](https://mapreader.readthedocs.io/en/latest/getting-started/installation-instructions/index.html) to set up your MapReader python environment.
-
-You can then install the required packages for this notebook by running:
-
-```bash
-pip install torch==2.2.2 torchvision==0.17.2 -f https://download.pytorch.org/whl/torch_stable.html
-pip install 'git+https://github.com/facebookresearch/detectron2.git'
-pip install 'git+https://github.com/maps-as-data/DeepSolo.git'
-pip install -r requirements.txt
-```
-
-For running the text spotting, you will need to clone the DeepSolo repository and download the weights file for the text spotting model.
-To do this, run the following commands:
-
-```bash
-git clone https://github.com/maps-as-data/DeepSolo.git
-wget https://huggingface.co/rwood-97/DeepSolo_ic15_res50/resolve/main/ic15_res50_finetune_synth-tt-mlt-13-15-textocr.pth
-```
-
-You can then run the notebooks by running:
-
-```bash
-jupyter notebook
-```
