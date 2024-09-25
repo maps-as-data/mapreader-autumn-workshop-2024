@@ -1,6 +1,6 @@
 # MapReader Autumn Workshop 2024
 
-[![Slides](https://img.shields.io/badge/slides-blue)](https://github.com/maps-as-data/mapreader-autumn-workshop-2024/blob/main/slides.pdf)
+[![Slides](https://img.shields.io/badge/slides-blue)](https://github.com/maps-as-data/spatial-humanities-mapreader-workshop/blob/main/slides.pdf)
 [![Documentation](https://img.shields.io/badge/documentation-green)](https://mapreader.readthedocs.io/en/latest)
 
 This repo contains worked examples of running [MapReader](https://github.com/maps-as-data/MapReader), designed for the Data/Culture Autumn Workshop 2024.
